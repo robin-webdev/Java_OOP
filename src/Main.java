@@ -1,91 +1,47 @@
-import java.util.ArrayList;
+import OOPS_HomeWorks.Product;
+import OOPS_HomeWorks.Student;
+import OOPS_HomeWorks.StudentManager;
+
 import java.util.Scanner;
 
 public class Main {
     static void main(String[] args) {
-        var list = new ArrayList<Product>();
-        var sc = new Scanner(System.in);
-        var menuItem = 0;
-        do {
-            printMenu();
-            menuItem = nextSafeInt(sc, "Enter your choice : ");
-            switch (menuItem) {
-                case 1:
-                    addNew(sc, list);
-                    break;
-                case 2:
-                    showAll(list);
-                    break;
-                case 3:
-                    System.out.println("See you soon!");
-                    break;
-                case 4:
-                    minMax(list);
-                    break;
-                default:
-                    System.out.println("Invalid Input!");
-                    break;
-            }
-        } while (menuItem != 3);
+//        HomeWork_1();
+        HomeWork_2();
+    }
+
+    public static void HomeWork_1() {
+        Product prod_1 = new Product("Laptop", 750, 89, "Electronics");
+        Product prod_2 = new Product("Mobile", 450, 57, "Electronics");
+        Product prod_3 = new Product("Chair", 80, 45, "Furniture");
+
+        prod_1.displayDetails();
+        prod_2.displayDetails();
+        prod_3.displayDetails();
+
+        prod_1.applyDiscount(49);
+        prod_1.displayDetails();
+
+        prod_2.restock(25);
+        prod_2.displayDetails();
+
+        prod_3.sell(101);
 
     }
 
+    public static void HomeWork_2() {
+        StudentManager students = new StudentManager();
 
-    public static int nextSafeInt(Scanner sc, String str) {
-        do {
-            try {
-                System.out.print(str);
-                return Integer.parseInt(sc.nextLine());
-            } catch (Exception exc) {
-                System.out.println("Invalid Input! Integer Expected.");
-            }
-        } while (true);
+        Student student_1 = new Student(101, "Alex");
+        student_1.addGrade();
 
-    }
+        Student student_2 = new Student(101, "Joy");
+        student_2.addGrade();
 
-    private static void printMenu() {
-        System.out.println("1. Add New");
-        System.out.println("2. Show All");
-        System.out.println("3. Quit");
-        System.out.println("4. Minimum and Maximum Prices");
-    }
+        students.addStudent(student_1);
+        students.addStudent(student_2);
 
-    private static void addNew(Scanner sc, ArrayList<Product> list) {
-        var newItem = new Product();
-        System.out.print("Please enter name : ");
-        newItem.name = sc.nextLine();
-        int price = nextSafeInt(sc, "Please Enter price : ");
-        if (price <= 0) {
-            newItem.price = 1;
-        } else {
-            newItem.price = price;
-        }
-        list.add(newItem);
+        students.displayAllStudents();
 
-    }
-
-    private static void showAll(ArrayList<Product> list) {
-        for (int i = 0; i < list.size(); i++) {
-            list.get(i).getInfo();
-        }
-    }
-
-
-    private static void minMax(ArrayList<Product> list) {
-        Product minPrice = list.getFirst();
-        Product maxPrice = list.getFirst();
-        for (int i = 0; i < list.size(); i++) {
-            Product item = list.get(i);
-
-            if (item.price <= minPrice.price) {
-                minPrice = item;
-            }
-            if (item.price >= maxPrice.price) {
-                maxPrice = item;
-            }
-        }
-
-        System.out.println("Maximum - " + maxPrice.name + " " + maxPrice.price);
-        System.out.println("Minimum - " + minPrice.name + " " + minPrice.price);
     }
 }
