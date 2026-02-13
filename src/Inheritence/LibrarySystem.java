@@ -124,9 +124,11 @@ public class LibrarySystem {
         switch (choice) {
             case 1:
                 listAllBooks();
+                interact();
                 break;
             case 2:
                 listAllMembers();
+                interact();
                 break;
             case 3:
                 System.out.println("Enter Member Name : ");
@@ -135,26 +137,32 @@ public class LibrarySystem {
                 String id = sc.nextLine();
                 Member member = new Member(name, id);
                 addMemberToSystem(member);
+                interact();
                 break;
             case 4:
                 borrowBook();
+                interact();
                 break;
             case 5:
                 returnBook();
+                interact();
                 break;
             case 6:
                 viewMemberBooks();
+                interact();
                 break;
             case 7:
                 break;
             default:
                 System.out.println("Invalid Input...");
+                interact();
                 break;
         }
 
     }
 
     public void addBookToSystem(Book book) {
+
         books.put(book.isbn, book);
         System.out.println("Book added successfully");
 
@@ -171,8 +179,8 @@ public class LibrarySystem {
             return;
         }
         for (Book book : books.values()) {
-            System.out.println(book.getDetails());
-            System.out.println("---------------");
+            System.out.println(books.values().toString());;
+            book.getDetails();
         }
     }
 
