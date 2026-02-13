@@ -8,8 +8,12 @@ public class Book {
     public int pages;
     public boolean isAvailable;
 
-    public Book() {
-
+    public Book(String title, String author, String isbn, int pages) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.pages = pages;
+        this.isAvailable = true;
     }
 
     public void setIsAvailable(Boolean value) {

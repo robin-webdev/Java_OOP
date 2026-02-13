@@ -9,5 +9,9 @@ public class Main {
         librarySystem.addBookToSystem(new Comic("Batman: Year One", "Frank Miller", "9101", 150, "David Mazzucchelli"));
         librarySystem.addMemberToSystem(new Member("Alice", "M001"));
         librarySystem.addMemberToSystem(new Member("Bob", "M002"));
+
+        while (true) {
+            librarySystem.interact();
+        }
     }
 }

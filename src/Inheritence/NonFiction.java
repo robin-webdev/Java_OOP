@@ -4,9 +4,10 @@ public class NonFiction extends Book {
     public String field;
 
     public NonFiction(String title, String author, String isbn, int pages, String field) {
+        super(title, author, isbn, pages);
         this.field = field;
-        setIsAvailable(true);
     }
+
 
     public void showBookInformation() {
         getDetails();
