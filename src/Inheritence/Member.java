@@ -20,7 +20,7 @@ public class Member {
 
     public void returnBook(Book book) {
         this.borrowedBooks.remove(book);
-        book.iwsAvailable = true;
+        book.isAvailable = true;
     }
 
     public void viewBorrowedBook() {
