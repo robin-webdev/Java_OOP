@@ -12,6 +12,7 @@ public class Fiction extends Book {
 
     @Override
     public void showBookInformation() {
-        System.out.println(getDetails() + " [Genre: " + genre + "]");
+        getDetails();
+        System.out.println( " [Genre: " + genre + "]");
     }
 }
