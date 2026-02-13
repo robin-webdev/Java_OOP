@@ -8,6 +8,6 @@ public class Comic extends Book{
     }
     public void showBookInformation() {
         getDetails();
-        System.out.println(" [Illustraitor: " + illustrator + "]");
+        System.out.println(" [Illustrator: " + illustrator + "]");
     }
 }
