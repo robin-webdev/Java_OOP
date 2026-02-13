@@ -8,19 +8,23 @@ public class Book {
     public int pages;
     public boolean isAvailable;
 
-    public Book(){
+    public Book() {
 
     }
 
-    public void borrowBook(){
+    public void setIsAvailable(Boolean value) {
+        isAvailable = value;
+    }
+
+    public void borrowBook() {
         isAvailable = false;
     }
 
-    public void returnBook(){
+    public void returnBook() {
         isAvailable = true;
     }
 
-    public void getDetails(){
+    public void getDetails() {
         System.out.println("Title : " + title);
         System.out.println("Author : " + author);
         System.out.println("ISBN : " + isbn);
@@ -28,7 +32,7 @@ public class Book {
         System.out.println("Is Available : " + isAvailable);
     }
 
-    public void showBookInformation(){
+    public void showBookInformation() {
 
     }
 }
