@@ -10,8 +10,5 @@ public class Main {
         librarySystem.addMemberToSystem(new Member("Alice", "M001"));
         librarySystem.addMemberToSystem(new Member("Bob", "M002"));
 
-        while (true) {
-            librarySystem.interact();
-        }
     }
 }
