@@ -1,5 +1,5 @@
 package Inheritence;
 
-public class Animal {
+public class Main {
 
 }
