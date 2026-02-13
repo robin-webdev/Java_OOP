@@ -179,7 +179,6 @@ public class LibrarySystem {
             return;
         }
         for (Book book : books.values()) {
-            System.out.println(books.values().toString());;
             book.getDetails();
         }
     }
