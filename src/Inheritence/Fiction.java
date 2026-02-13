@@ -5,7 +5,6 @@ public class Fiction extends Book {
     private final String genre;
 
     public Fiction(String title, String author, String isbn, int pages, String genre) {
-        super(title, author, isbn, pages);
         this.genre = genre;
         this.isAvailable = true;
     }
@@ -13,6 +12,6 @@ public class Fiction extends Book {
     @Override
     public void showBookInformation() {
         getDetails();
-        System.out.println( " [Genre: " + genre + "]");
+        System.out.println(" [Genre: " + genre + "]");
     }
 }

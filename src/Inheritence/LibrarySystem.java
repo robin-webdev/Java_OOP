@@ -1,5 +1,6 @@
 package Inheritence;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -91,6 +92,40 @@ public class LibrarySystem {
         books = new HashMap<>();
         members = new HashMap<>();
         sc = new Scanner(System.in);
+
+    }
+
+    public void viewMemberBooks() {
+        System.out.print("Enter the member id : ");
+        String id = sc.nextLine();
+        ArrayList<Book> books = members.get(id).borrowedBooks;
+        for (Book book : books) {
+            System.out.println(book.title);
+        }
+    }
+
+    public Member getMemberInformation() {
+        System.out.print("Enter the member id : ");
+        String id = sc.nextLine();
+        return members.get(id);
+    }
+
+    public void interact() {
+        System.out.println("-------------------Library Menu:-----------");
+        System.out.println("1. List All Books");
+        System.out.println("2. List All Members");
+        System.out.println("3. Add Member");
+        System.out.println("4. Borrow a Book");
+        System.out.println("5. Return a Book");
+        System.out.println("6. View Member's Borrowed Books");
+        System.out.println("7. Exit");
+
+        int choice = Integer.parseInt(sc.nextLine());
+
+//        switch (choice){
+//            case 1:
+//
+//        }
 
     }
 
