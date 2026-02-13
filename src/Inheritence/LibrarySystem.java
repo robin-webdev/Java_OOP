@@ -17,8 +17,7 @@ public class LibrarySystem {
 
         System.out.println("List of Registered Members:");
         for (String id : members.keySet()) {
-            System.out.println("Member ID: " + id +
-                    ", Name: " + members.get(id).name);
+            System.out.println("Member ID: " + id + ", Name: " + members.get(id).name);
         }
     }
 
@@ -122,10 +121,36 @@ public class LibrarySystem {
 
         int choice = Integer.parseInt(sc.nextLine());
 
-//        switch (choice){
-//            case 1:
-//
-//        }
+        switch (choice) {
+            case 1:
+                listAllBooks();
+                break;
+            case 2:
+                listAllMembers();
+                break;
+            case 3:
+                System.out.println("Enter Member Name : ");
+                String name = sc.nextLine();
+                System.out.println("Enter Member Id : ");
+                String id = sc.nextLine();
+                Member member = new Member(name, id);
+                addMemberToSystem(member);
+                break;
+            case 4:
+                borrowBook();
+                break;
+            case 5:
+                returnBook();
+                break;
+            case 6:
+                viewMemberBooks();
+                break;
+            case 7:
+                break;
+            default:
+                System.out.println("Invalid Input...");
+                break;
+        }
 
     }
 
@@ -140,17 +165,18 @@ public class LibrarySystem {
         System.out.println("Member added successfully");
     }
 
-    public void listAllBooks(){
+    public void listAllBooks() {
         if (books.isEmpty()) {
             System.out.println("No books in the library.");
             return;
-        } for (Book book : books.values()) {
+        }
+        for (Book book : books.values()) {
             System.out.println(book.getDetails());
             System.out.println("---------------");
         }
     }
 
 
-    }
+}
 
 
